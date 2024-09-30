@@ -1,3 +1,5 @@
+import com.sun.source.tree.Tree;
+
 import java.util.TreeSet;
 
 public class Main {
@@ -18,6 +20,13 @@ public class Main {
 
         for(Book b : books){
             System.out.println(b.getName());
+        }
+
+        TreeSet<Book> booksV2 = new TreeSet<>(new PageNoComparable());
+        booksV2.addAll(books);
+
+        for(Book b:booksV2){
+            System.out.println(b.getPageNo());
         }
 
     }
